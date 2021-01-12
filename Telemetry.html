@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telemetry</title>
+    <link rel="stylesheet" href="fontawesome/css/all.css">
+    <style>
+        /***** RESET *****/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code,del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, sub, sup, tt, var, b, u, i, center,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	/*font-size: 100%;
+	vertical-align: baseline;*/
+	
+}
+html, body {height:100%;}
+body {line-height: 1;}
+ol, ul {list-style: none;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after, q:before, q:after {content: '';content: none;}
+table {border-collapse: collapse;border-spacing: 0;} 
+textarea {overflow:auto;}
+
+/***** RESET *****/
+html{
+    scroll-behavior: smooth;
+}
+
+.container{
+            width: 100%;
+            height: auto;
+            
+        }
+        .wallpaper{
+            width: 100%;
+            height: 580px;
+            background:url(photos/1920x580.jpg);
+        }
+        nav{
+            width: 100%;
+            height: 100px;
+           line-height: 100px;
+           
+        }
+        .logo{
+            font:30px arial;
+            margin: 30px 0 0 20px;
+            float: left;
+        }
+        .logo a{
+            color: #003;
+            text-decoration: none;
+        }
+        .menu{
+            width: 400px;
+            height: 40px;
+            float: left;
+            margin: 30px 0 0 960px;
+            
+        }
+        .menu ul{
+            list-style: none;
+        }
+        .menu ul li{
+            float: left;
+            position: relative;
+        }
+        .menu ul li a{
+            display: block;
+            width: 100px;
+            height: 28px;
+            text-align: center;
+            text-decoration: none;
+            color: #003;
+            font: 14px arial;
+            padding: 12px 0 0 0;
+            border-radius: 5px;
+           
+        }
+        .menu ul li#home a{
+            display: block;
+            width: 60px;
+            height: 28px;
+        }
+        .menu ul li#drop a{
+            display: block;
+            width: 90px;
+            height: 28px;
+            
+        }
+        .menu ul li#generic a{
+            display: block;
+            width: 75px;
+            height: 28px;
+        }
+        .menu ul li#elements a{
+            display: block;
+            width: 75px;
+            height: 28px;
+        }
+        .menu ul li a:hover{
+            font-size: 16px;
+            color: #000;
+            transition: all 0.7s;
+            background-color: lightblue;
+        }
+        .menu ul li ul {
+            display: none;
+            position: absolute;
+            left: 0px;
+            top: 40px;
+        }     
+        .menu ul li:hover ul{
+            display: block;
+        }
+        .center{
+            width: 600px;
+            height: 400px;
+            margin: 0 auto;
+        }
+        .logophoto{
+            width: 100px;
+            height: 100px;
+            background-color: #666;
+            margin: 0 auto;
+            border-radius: 50px;
+        }
+        .wallpaper article{
+            width: 600px;
+            height: 120px;
+            color: white;
+            font: 45px arial;
+            text-align: center;
+            padding: 30px 0 0 0;
+            border-bottom: 1px solid #666;
+        }
+        .button{
+            width: 100px;
+            height: 40px;
+            margin: 50px auto;
+           
+        }
+        .center input{
+            display: block;
+            width: 100px;
+            height: 40px;
+            background: none;
+            border: 1px solid #fff; 
+            font: 14px arial;
+            color: black;
+        }
+        .center  input:hover{
+            background-color: #ffc;
+            opacity: 0.3;
+            transition: all 0.9;
+            cursor: pointer;
+        }
+       
+        .second{
+            width: 100%;
+            height: 500px;
+        
+        }
+        .second1{
+            width: 40%;
+            height: 500px;
+            border-radius: 6px;
+            float: left;
+        }
+        .second1p{
+               width: 300px;
+               height: 450px;
+               margin: 25px 0 0 250px;
+               background: url(photos/2.jpg);
+               border-radius: 5px;
+        }
+        .second2{
+            width: 60%;
+            height: 400px;
+            float: left;
+            padding: 100px 0 0 0;
+        }
+            .writing1{
+                width: 100%;
+                height: 100px;
+            }
+            .writing1 article{
+                font-family: arial;
+                font-size: 30px;
+                letter-spacing: 1px;
+                color: #333333;
+                
+            }
+            .writing2{
+                width: 100%;
+                height: 120px;
+            }
+            .article1{
+                width: 37%;
+                height: 120px;
+                font-family: arial;
+                font-size: 23px;
+                color: #333333;
+                border-right: 1px solid #333 ;
+                border-bottom: 1px solid #333 ;
+                float: left;
+                padding: 10px 0 0 20px;
+            }
+            .article1 i{
+                font-size: 25px;
+                color: lightblue;
+            }
+            .article2{
+                width: 37%;
+                height: 120px;
+                font: 20px arial;
+                color: #333;
+                border-bottom: 1px solid #333 ;
+                padding: 10px 0 0 20px;
+                float: left;
+                
+            }
+            .article2 i{
+                font-size: 25px;
+                color: lightblue;
+            }
+            .writing3{
+                width: 100%;
+                height: 120px;
+            }
+            .article3{
+                width: 37%;
+                height: 120px;
+                font-family: arial;
+                font-size: 23px;
+                color: #333333;
+                border-right: 1px solid #333 ;
+                float: left;
+                padding: 10px 0 0 20px;
+            }
+            .article3 i{
+                font-size: 25px;
+                color: lightblue;
+            }
+         .article4{
+            width: 37%;
+            height: 120px;
+            font: 20px arial;
+           color: #333;
+           padding: 10px 0 0 20px;
+           float: left;
+                
+            }
+        .article4 i{
+            font-size: 25px;
+            color: lightblue;
+            }
+        .third{
+            width: 100%;
+            height: 250px;
+            background-color: lightblue;
+            padding: 50px 0 0 0;
+        }
+        .third1{
+            width: 60%;
+            height: 200px;
+            margin: auto;
+        }
+        .third1 article{
+            width: 20%;
+            height: 200px;
+            float: left;
+            border-right: solid 1px white;
+            text-align: center;
+            color: #666;
+           
+        }
+        .third1 article:last-child{
+            border-right: none;
+        }
+        .third1 article span{
+            font: 70px 'times new roma';
+            color: white;
+          letter-spacing: 2px;
+
+        }
+        .third1 article h3{
+            color: white;
+            
+        }
+        .fourth{
+            width: 100%;
+            height: 500px;
+            padding: 100px 0 0 0;
+        }
+        .fourth1{
+            width: 960px;
+            height: 400px;
+            background: white;
+            margin: 0 auto;
+            border: 1px solid rgb(177, 176, 176);
+            
+        }
+        .photo{
+            width: 400px;
+            height: 220px;
+            background:url(photos/400x220.jpg);
+            border-radius: 3px;
+           margin: 90px 0 0 0;
+            float: left;
+        }
+        .ned{
+            width:500px;
+            height: 400px;
+            float: left;
+            }
+            .ned h2{
+                color: rgb(92, 91, 91);
+                font: 30px arial;
+                display: block;
+                width: 450px;
+                margin: 90px 0 0 50px;
+                letter-spacing: 1px;
+            }
+            .ned span{
+                display: block;
+                width: 480px;
+               margin: 30px 0 0 10px;
+               color: #666;
+               line-height: 20px;
+            }
+            .ned input{
+                display: block;
+                width: 120px;
+                height: 40px;
+                color: rgb(92, 91, 91);
+                margin: 30px 0 0 50px;
+                cursor: pointer;
+            }
+        .fifth{
+            width: 100%;
+            height: 600px;
+            }
+            .fifth1{
+                width: 50%;
+                height: 600px;
+               background: url(photos/960x600.jpg);
+                float: left;
+                position: relative;
+                overflow: hidden;
+            }
+            .quotes{
+                width: 100%;
+                height: 600px;
+                background: lightblue;
+                opacity: 0.6;
+                position:absolute;
+                left:0; top: 960px; bottom: 0; right: 0;
+                transition: all 0.5s;
+            }
+            .fifth1:hover .quotes{
+                    top: 0;
+            }
+            .fifth2:hover .quotes{
+                    top: 0;
+            }
+             .quotes h3,h4,h6{
+                 text-align: center;
+             }
+            .quotes{
+                font-size: 35px;
+                color: black;
+            }
+            .quotes i{
+                color: black;
+                margin: 200px 0 0 350px;
+                opacity: none;
+                }
+            .fifth2{
+                width: 50%;
+                height: 600px;
+                background: url(photos/960x600.2.jpg);
+                float: left;
+                position: relative;
+                overflow: hidden;
+            }
+        .sixth{
+            width: 100%;
+            height: 520px;
+            background-color: lightblue;
+            padding: 80px 0 0 0;
+        }
+        .contactemail{
+            width: 1000px;
+            height: 400px;
+           border-bottom:solid 1px #333 ;
+            margin: 0 auto ;
+        }
+        .rights{
+            width: 1000px;
+            height: 100px;
+            margin: 0 auto;
+           text-align: center;
+           color: #333; 
+           padding: 10px 0 0 0;
+        }
+        .email{
+            width: 700px;
+            height: 400px;
+            float: left;
+        }
+        .email input{
+            width: 250px;
+            height: 30px;
+            background-color: lightblue;
+            border: solid 1px white;
+        }
+        .email textarea{
+            width: 250px;
+            height: 30px;
+            background-color: lightblue;
+        }
+        #message{
+            width: 522px;
+            height: 155px;
+           
+        }
+        .contact{
+            width: 300px;
+            height: 400px;
+            float: left;
+        }
+        .awesome{
+            font-family: Arial; 
+            font-size: 35px; 
+            color: #333;
+            text-align: left;
+        }
+        .fa-facebook:hover{
+            font-size: 40px;
+            transition: all 0.2s;
+        }
+        .fa-twitter-square:hover{
+            font-size: 40px;
+            transition: all 0.2s;
+        }
+        .fa-instagram-square:hover{
+            font-size: 40px;
+            transition: all 0.2s;
+        }
+        .fa-linkedin:hover{
+            font-size: 40px;
+            transition: all 0.2s;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+    <div class="wallpaper">
+        <nav>
+           <div class="logo"><a href="#">Telemetry</a></div> 
+           <div class="menu">
+           <ul>
+               <li id="home"><a href="">Home</a></li>
+               <li id="drop"><a href="">Dropdown</a>
+                    <ul>
+                        <li id="one"><a href="">Option one</a></li>
+                        <li id="two"><a href="">Option two</a></li>
+                        <li id="three"><a href="">Option three</a></li>
+                        <li id="sub"><a href="">Submenu</a></li>
+                    </ul>
+                </li>
+               <li id="generic"><a href="">Generic</a></li>
+               <li id="elements"><a href="">Elements</a></li>
+           </ul>
+        </div>
+        </nav>
+                <div class="center">
+                    <div class="logophoto"><i class="fas fa-laptop" style="font-size: 50px; margin: 25px 0 0 20px; color:white;"></i></div>
+                    <article>
+                        Ipsum dolor sit amet feugiat et veroeros adipiscing
+                    </article>
+                    <div class="button"><form action="" method="GET"><a href="#start" id="target" onclick="go()"><input type="button" value="START" name="" id="start"></a></form> </div>
+                </div>
+    </div>
+    <div class="second">
+        <a name="start"></a>
+        <aside class="second1">
+          <div class="second1p"></div>
+        </aside>
+        <aside class="second2">
+            <div class="writing1">
+                <article>Adipiscing ornare risus morbi est est blandi <br> magna vel euismod tempus
+                    Sed veroeros</article>
+            </div>
+            <div class="writing2">
+                <article class="article1">
+                    <i class="far fa-gem">&nbsp; Sed veroeros</i><br>Lorem ipsum dolor sit amet<br> nulla etiam feugiat sed<br> adipiscing.
+                </article>
+                <article class="article2">
+                    <i class="far fa-sticky-note">&nbsp;Magna etiam</i><br>Lorem ipsum dolor sit amet<br> nulla etiam feugiat sed <br>adipiscing.
+                </article>
+            </div>
+            <div class="writing3">
+                <article class="article3">
+                    <i class="far fa-clone">&nbsp;Nulla consequat</i><br>Lorem ipsum dolor sit amet<br> nulla etiam feugiat sed<br> adipiscing.
+                </article>
+                <article class="article4">
+                    <i class="far fa-envelope">&nbsp;Euismod morbi</i><br>Lorem ipsum dolor sit amet<br> nulla etiam feugiat sed <br>adipiscing.
+                </article>
+            </div>
+        </aside>
+    </div>
+    <div class="third">
+        <div class="third1">
+            <article>
+                <h3><span>128</span><br>
+                    Sed magna
+                </h3>
+                Lorem ipsum dolor nulla feugiat adipiscing.
+            </article>
+            <article>
+                <h3><span>640</span><br>
+                    Etiam dolor
+                </h3>
+                Lorem ipsum dolor nulla feugiat adipiscing.
+            </article>
+            <article><h3><span>256</span><br>
+                Nullam amet
+            </h3>
+            Lorem ipsum dolor nulla feugiat adipiscing.</article>
+            <article>
+                <h3><span>768</span><br>
+                    Sit euismod
+                </h3>
+                Lorem ipsum dolor nulla feugiat adipiscing.
+            </article>
+        </div>
+    </div>
+    <div class="fourth">
+        <div class="fourth1">     
+            <div class="ned">
+                <h2>Lorem ipsum dolor sit magna <br> feugiat etiam sed dolor</h2>
+                <span>Maecenas id feugiat nunc. Integer gravida augue libero, quis pellentesque <br> 
+                     amet pharetra a. Ut sagittis ipsum nec velit porttitor, sed convallis ligula  <br> 
+                     pellentesque. Mauris et dignissim sem lacinia lorem ipsum dolor.</span>
+                     <input type="button" name="" value="LEARN MORE" id="">
+            </div>
+            <div class="photo"></div>
+        </div>
+    </div>
+    <div class="fifth">
+        <div class="fifth1">
+            <div class="quotes"><i class="fas fa-quote-left"></i>
+                <h3>"Sed ultrices consequat dolor nulla fringilla dignissim"</h3> 
+               <br/><br/>
+                <h4>Jane Doe</h4>
+                <br>
+                <h6>Ipsum dolor nullam</h6>
+            </div>
+        </div>
+        <div class="fifth2">
+        <div class="quotes"><i class="fas fa-quote-left"></i>
+            <h3>"Nam velit et lorem porta quis at pulvinar tellus nibh"</h3> 
+           <br/><br/>
+            <h4>John Doe</h4>
+            <br>
+            <h6>Ipsum dolor nullam</h6></div>
+        </div>
+    </div>
+    <div class="sixth">
+       <div class="contactemail">
+           <div class="contact">       
+               <span style="font-size: 30px; color: #333; text-align: left; font-family: arial;">Contact</span><br/><br/><br/><br/>
+               <a href="#" style="text-decoration: none;">
+               <span style="font-family: Arial; font-size: 17px; color: #333; text-align: left; " ><i class="fas fa-home"></i>&nbsp; 1234 Fictional Street #5432 <br><br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Nashville, TN 00000-0000</span><br/><br/>
+                  <span style="font-family: Arial; font-size: 20px; color: #333; text-align: left;" ><i class="fas fa-phone"></i>&nbsp;(000) 000-0000</span><br/><br/>
+                  <span style="font-family: Arial; font-size: 20px; color: #333; text-align: left;" ><i class="fas fa-envelope"></i>&nbsp;info@untitled.tld</span><br/><br/><br/><br/>
+                  <span  class="awesome" ><i class="fab fa-facebook"></i>&nbsp;&nbsp;<i class="fab fa-twitter-square"></i>&nbsp;&nbsp;<i class="fab fa-instagram-square"></i>&nbsp;&nbsp;<i class="fab fa-linkedin"></i></span>
+                </a>
+           </div>
+           <div class="email">
+            <span style="font-size: 30px; color: #333; text-align: center; font-family: arial;">Email Us</span><br/><br/><br/><br/>
+            <form action="" method="GET">
+            <input type="text" name="" id="Name" placeholder="Name" >&nbsp;&nbsp; <input type="text" name="" id="Name" placeholder="Email" ><br><br>
+            <textarea name="" id="message" cols="40" rows="50" placeholder="Message" style="border: solid 1px #fff;"></textarea><br/><br/><br/>
+            <input type="submit" name="" id="" value="Send" style="border: solid 1px #fff; background-color: #608cf5;">
+        </form>
+           </div>
+       </div>
+       <div class="rights">
+        &copy;2020 <mark>ASOIU</mark> BA. System Enginering. Created by<span> Mahmudov Şahin</span> 
+       </div>
+    </div>
+   </div>
+  
+</body>
+</html>
